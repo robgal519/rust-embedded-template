@@ -31,7 +31,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "cargo install probe-run",
+	"postCreateCommand": "cargo install probe-run && git submodule update"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
