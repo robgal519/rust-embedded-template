@@ -4,10 +4,9 @@
 	"name": "Rust",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile"build": 
 	"build": {
-        // Path is relataive to the devcontainer.json file.
-        "dockerfile": "Dockerfile"
-    },
-	
+		// Path is relataive to the devcontainer.json file.
+		"dockerfile": "Dockerfile"
+	},
 	// Use 'mounts' to make the cargo cache persistent in a Docker Volume.
 	"mounts": [
 		{
@@ -19,23 +18,23 @@
 			"source": "/dev/bus/usb",
 			"target": "/dev/bus/usb",
 			"type": "bind"
+		},
+		{
+			"source": "/home/robert/.ssh",
+			"target": "/home/vscode/.ssh",
+			"type": "bind"
 		}
 	],
 	"privileged": true,
 	"updateRemoteUserUID": true,
-
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "cargo install probe-run && git submodule update"
-
+	"postCreateCommand": "cargo install probe-run && git submodule update --init --recursive"
 	// Configure tool-specific properties.
 	// "customizations": {},
-
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }
